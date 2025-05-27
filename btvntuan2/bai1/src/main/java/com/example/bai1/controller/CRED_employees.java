@@ -65,6 +65,6 @@ public class CRED_employees {
             }
         }
 
-        return "redirect:/employees/select" ;0
+        return "redirect:/employees/select" ;
     }
 }

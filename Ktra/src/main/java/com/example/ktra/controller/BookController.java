@@ -15,35 +15,35 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestApiV1
-@RequestMapping("/book")
+//@RestApiV1
+@RestController
+@RequestMapping("api/v1/book")
 @RequiredArgsConstructor
 
 public class BookController {
-    @Autowired
     private final BookService bookService;
 
-    @GetMapping(Url.Book.GET_BOOKS)
+    @GetMapping
     public ResponseEntity<?> getBooks() {
         return VsReponseUtil.success(bookService.getAllBooks());
     }
 
-    @GetMapping(Url.Book.GET_BOOK)
+    @GetMapping("/{id}")
     public ResponseEntity<?> getBook(@PathVariable String id) {
         return VsReponseUtil.success((bookService.getBookById(id)));
     }
 
-    @PostMapping(Url.Book.CREATE_BOOK)
+    @PostMapping
     public ResponseEntity<?> createBook(@RequestBody CreateBookDTO createBookDTO) {
         return VsReponseUtil.success(bookService.createBook(createBookDTO));
     }
 
-    @PostMapping(Url.Book.UPDATE_BOOK)
+    @PutMapping("/{id}")
     public ResponseEntity<?> updateBook(@RequestBody UpdateBookDTO updateBookDTO) {
         return VsReponseUtil.success(bookService.updateBook(updateBookDTO));
     }
 
-    @DeleteMapping(Url.Book.DELETE_BOOK)
+    @DeleteMapping
     public ResponseEntity<?> deleteBook(@PathVariable String id) {
         bookService.deleteBook(id);
         return null;

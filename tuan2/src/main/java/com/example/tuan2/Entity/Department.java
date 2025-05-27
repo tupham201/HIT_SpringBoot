@@ -3,6 +3,8 @@ package com.example.tuan2.Entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Table(name="department")
 @Data
@@ -15,6 +17,9 @@ public class Department {
     private int id;
     @Column(nullable = false)
     private String name;
+
+    @OneToMany(mappedBy = "department")
+    private List<Employee> employees;
 
     public Department(String name) {
         this.name = name;

@@ -1,4 +1,4 @@
-package com.example.online.domain;
+package com.example.online.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

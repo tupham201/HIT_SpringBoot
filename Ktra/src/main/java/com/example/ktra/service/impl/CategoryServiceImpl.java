@@ -20,7 +20,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CategoryServiceImpl implements CategoryService {
 
-    @Autowired
     private final CategoryRepository categoryRepository;
     private final CategoryMapper categoryMapper;
 

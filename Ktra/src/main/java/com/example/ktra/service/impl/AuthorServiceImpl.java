@@ -18,7 +18,6 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class AuthorServiceImpl implements AuthorService {
-    @Autowired
     private final AuthorRepository authorRepository;
     private final AuthorMapper authorMapper;
 

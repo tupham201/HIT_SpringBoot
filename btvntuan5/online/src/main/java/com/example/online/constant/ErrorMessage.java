@@ -1,4 +1,4 @@
-package com.example.online.contant;
+package com.example.online.constant;
 
 public class ErrorMessage {
     public class User{

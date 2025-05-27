@@ -1,4 +1,4 @@
-package com.example.online.domain.dto;
+package com.example.online.domain.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

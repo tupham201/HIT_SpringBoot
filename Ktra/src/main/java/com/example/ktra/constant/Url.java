@@ -2,10 +2,11 @@ package com.example.ktra.constant;
 
 public class Url {
     public static class Author {
-        public static final String PREFIX = "/author";
-        public static final String GET_AUTHORS = PREFIX + "/getAllAuthors";
+        public static final String AAA = "";
+        public static final String PREFIX = "/authors";
+        public static final String GET_AUTHORS = PREFIX ;
         public static final String GET_AUTHOR = PREFIX + "/{id}";
-        public static final String CREATE_AUTHOR = PREFIX + "/createAuthor";
+        public static final String CREATE_AUTHOR = PREFIX ;
         public static final String UPDATE_AUTHOR = PREFIX + "/updateAuthor";
         public static final String DELETE_AUTHOR = PREFIX + "/deleteAuthor";
     }

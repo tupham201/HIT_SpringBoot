@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.Generated;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name="employees")
 @Data
@@ -23,6 +25,8 @@ public class Employee {
     @JoinColumn(name = "department_id", nullable = false)
     private Department department;
 
+    @ManyToMany
+    private List<skill>Skills ;
     public Employee(String name, String email, Department department) {
         this.name = name;
         this.email = email;

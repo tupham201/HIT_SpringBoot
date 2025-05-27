@@ -13,35 +13,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RestApiV1
-@RequestMapping("/category")
+//@RestApiV1
+@RequestMapping("api/v1/category")
 @RequiredArgsConstructor
 
 public class CategoryController {
-    @Autowired
     private final CategoryService categoryService;
 
-    @GetMapping(Url.Category.GET_CATEGORYS)
+    @GetMapping
     private ResponseEntity<?> getCategorys() {
         return VsReponseUtil.success(categoryService.getAllCategories());
     }
 
-    @GetMapping(Url.Category.GET_CATEGORY)
+    @GetMapping("/{id}")
     private ResponseEntity<?> getCategory(@RequestParam String id) {
         return VsReponseUtil.success(categoryService.findCategoryById(id));
     }
 
-    @PostMapping(Url.Category.CREATE_CATEGORY)
+    @PostMapping
     private ResponseEntity<?> createCategory(@RequestBody CreateCategoryDTO createCategoryDTO) {
         return VsReponseUtil.success(categoryService.createCategory(createCategoryDTO));
     }
 
-    @PostMapping(Url.Category.UPDATE_CATEGORY)
+    @PutMapping("/{id}")
     private ResponseEntity<?> updateCategory(@RequestBody UpdateCategoryDTO updateCategoryDTO) {
         return VsReponseUtil.success(categoryService.updateCategory(updateCategoryDTO));
     }
 
-    @DeleteMapping(Url.Category.DELETE_CATEGORY)
+    @DeleteMapping("/{id}")
     private ResponseEntity<?> deleteCategory(@PathVariable String id) {
         categoryService.deleteCategory(id);
         return null;
